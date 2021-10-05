@@ -1,0 +1,19 @@
+1.node_modules 用来存放包管理工具下载安装的包文件夹
+2.public 公共资源
+3.src 源文件
+4.browerslistrc 项目配置管理工具
+5.gitgnore git配置
+6.Balbel.config.js 转码器
+7.Package.json 项目依赖文件
+8.Readme.md 说明文档
+9.Yarn.lock 文件备件 及避免以外修改
+
+
+
+
+
+
+
+
+
+
