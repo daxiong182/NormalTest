@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透明文字效果</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            overflow-x: hidden;
+        }
+        
+        .background {
+            background-image: url('./1.jpeg');
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 200vh;
+            font-weight: 900;
+            font-size: 39rem;
+            /* 文字区域裁剪 文字区域外的内容都会被裁掉*/
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .background::before {
+            content: '';
+            background-image: inherit;
+            background-size: cover;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+        
+        h1 {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 10px;
+            color: #fff;
+        }
+        
+        h2 {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 120vh;
+            width: 60%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            background-color: rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <h1>bilibili <br/> 大大熊的练习题 </h1>
+
+    <div class="background"><span>xion</span></div>
+    <h2>
+        动静之机，在於阴阳，总归神聚.神聚则一气鼓汤，炼气归神. 气势腾挪，精神贯注.开合有致，虚实清楚.左虚则右实，右虚则左实. 虚非全然无力，气势要有腾挪.实非全然占煞，精神宜贵专注 . 紧要全在胸中腰腿间运化,不在外面.力从人借，气由脊发. 胡能气由脊发? 气向下沈，由两肩收入脊骨，注於腰间. 此气之由上而下也，谓之合.由腰展於脊骨，布於两膊，施於手指. 此气之由下而上也，谓之开.合便是收，开即是放.懂得开合，便知阴阳. 到此地位，呼翕九阳，抱一合元，可名九阳神功.从此功用一日，技精一日，渐至从心所欲，豫顺以动，罔不如意矣
+    </h2>
+
+
+
+
+
+
+
+    <script>
+        const background = document.querySelector('.background')
+
+        document.addEventListener('scroll', () => {
+            const scrollY = window.scrollY
+
+            if (scrollY !== 0) {
+                background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+            } else {
+                background.style.backgroundPosition = ''
+            }
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

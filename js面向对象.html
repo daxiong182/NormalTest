@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js面向对象</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        function Dog(name) {
+            this.name = name
+        }
+
+        Dog.prototype.bark = function() {
+            console.log('汪汪');
+        }
+
+        Dog.prototype.sayName = function() {
+            console.log('my name is' + this.name);
+        }
+
+
+
+        function _new(Fn, ...arg) {
+
+            let obj = Object.create(Fn.prototype)
+            Fn.call(obj, ...arg)
+            return obj
+
+        }
+
+        //Object.create()方法 创建一个空对象 并让空对象的原型链指向所传对象
+
+        //将对象和数字进行比较的时候 对象会先调用toString()方法 将对象转换为字符串 再转换为数字进行比较
+
+
+        // let arrayLike = {
+        //     '1': 'tom',
+        //     '2': '65',
+        //     '3': '男',
+        //     '4': ['jane', 'john', 'Mary'],
+        //     length: 4
+        // }
+        // let arr = Array.from(arrayLike)
+        // console.log(arr)
+
+        // Object.defineProperty(obj,'property',{
+        //   this.指向当前属性 ‘property’
+        // })
+
+        // let obj = {
+        //     2: 3,
+        //     3: 4,
+        //     length: 2,
+        //     push: Array.prototype.push
+        // }
+
+        // obj.push(1)
+        // obj.push(2)
+        // console.log(obj);
+
+        //数组内置的push方法 底层实现
+        // Array.prototype.push = function(val) {
+        //     this[this.length] = val
+        //     return this.length
+
+        // }
+
+        // let arr = [12, 23, 15, 22, 75, 31]
+
+        // function bubble(arr) {
+        //     let temp = null
+        //     for (let i = 0; i < arr.length; i++) {
+        //         for (let j = 0; j < arr.length - 1 - i; j++) {
+        //             if (arr[j] > arr[j + 1]) {
+        //                 temp = arr[j];
+        //                 arr[j] = arr[j + 1]
+        //                 arr[j + 1] = arr[j]
+        //             }
+        //         }
+        //     }
+        //     return arr
+        // }
+
+        //计算 1-10 的和
+        // function sum() {
+        //     if (n > 10) {
+        //         return 0
+        //     }
+        //     return n + sum(n + 1)
+        // }
+
+        // let total = sum(1)
+
+        // console.log(total);
+
+        function quick(arry) {
+            //1.递归结束条件(当递归中小于等于一项 则不用处理)
+            if (arry.length <= 1) {
+                return arry
+            }
+
+            let middleIndex = Math.floor(arry.length / 2);
+            let middleValue = arry.splice(middleIndex, 1)[0]
+
+            //2.准备两个数组 循环剩下数组中的每一项
+            let arryLeft = [],
+                arryRight = [];
+            for (let i = 0; i < arr.length; i++) {
+                let item = arry[i]
+                item < middleValue ? arryLeft.push(item) : arryRight.push(item)
+            }
+            //3.递归 让左右两边的数组持续这样处理 一直到左右两边都排好序为止
+            return quick(aryLeft).concat(middleValue, quick(arryRight));
+
+        }
+        let sale = {
+            1: 222,
+            2: 123,
+            5: 888
+        };
+
+        let arr = new Array(12).fill(null).map((item, index) => {
+            return sale[index + 1] || null
+
+        });
+
+        sale.length = 13;
+        let arr1 = Array.from(sale).slice(1).map(item => typeof item === 'undefined' ? null : item)
+
+        //旋转数组
+
+        function rotate(k) {
+
+        }
+
+        Array.prototype.rotate = rotate
+
+        let arr = [1, 2, 3, 4, 5, 6, 7]
+
+        arr.rotate(3)
+
+        
+    </script>

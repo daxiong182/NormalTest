@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectAssign</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="text">
+
+
+
+    <script>
+        let cc = console.log.bind(document)
+        let t = null
+        let flag = true
+        let inp = document.querySelector('input')
+            //防抖  防抖和节流的区别,防抖只执行最后一次 节流是控制执行次数
+        inp.oninput = function() {
+                if (t !== null) {
+                    clearTimeout(t)
+                }
+                t = setTimeout(() => {
+                    cc(this.value);
+                }, 500)
+
+            }
+            //节流
+        window.onscroll = function() {
+            if (flag) {
+                setTimeout(() => {
+                    cc('hello world')
+                    flag = true
+                }, 500)
+            }
+            flag = false
+        }
+
+
+
+
+        // let c = console.log.bind(document)
+
+        // //Object.assign()方法是用来复制/克隆/拷贝对象的 Object(target,source1,source2,...)
+
+        // let obj1 = {
+        //     a: 1,
+        //     b: 2
+        // }
+
+        // let obj2 = {
+        //     c: 3,
+        //     d: 4
+        // }
+
+        // let obj3 = {
+        //     e: 5,
+        //     f: 6
+        // }
+
+        // Object.assign(obj1, obj2, obj3) //Object.assign方法会直接改变原对象
+
+        // c(obj1)
+
+        // let cc = console.log.bind(document);
+
+        // let obj = {
+        //     name: '小v',
+        //     age: 5,
+        //     author: '由'
+        // }
+
+        // Object.entries(obj)
+        // cc(objs)
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

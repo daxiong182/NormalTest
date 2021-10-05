@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript原型链原理</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <script>
+        var fn = function() {
+            this.f = 'fn'
+        }
+
+        Object.prototype.a = function() {
+            console.log('aaa');
+        }
+
+        Function.prototype.b = function() {
+            console.log('bbb');
+        }
+
+        var f = new fn();
+
+        f.a();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

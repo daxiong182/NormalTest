@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaSctript小技巧</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let c = console.log.bind(document)
+
+        function sum(...num) {
+            var cal = 0;
+            for (const a of num) {
+                cal += a
+            }
+            console.log(cal);
+        }
+
+        sum(2, 3, 4, 5, 6, 7)
+
+
+        //vue的子路由不需要斜杠开头
+        let obj = {
+            name: '张三',
+            age: 46,
+            address: '中国北京'
+        }
+
+        console.log(Object.keys(obj));
+        c(Object.values(obj))
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

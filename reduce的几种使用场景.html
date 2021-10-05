@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce的几种使用场景</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let arr = [0, 1, 2, 3, 4]
+        let arr2 = [
+            [1, 2], 3, 4
+        ]
+
+        let result = arr.reduce((val, item) => val + item, 10)
+
+        let flatArr = arr2.flat()
+        console.log(flatArr);
+
+        //计算数组中每个元素出现的次数
+        let arr3 = [1, 3, 4, 8, 5, 4, 2, 1, 3, 98, 134, 12, 12, 43, 5]
+
+        let resultNumber = arr3.reduce((val, item) => {
+            if (item in val) {
+                val[item]++
+            } else {
+                val[item] = 1
+            }
+            return val
+        }, {})
+
+        console.log(resultNumber);
+
+        //对数组进行分类
+        var people = [{
+            name: '张三',
+            age: 21
+        }, {
+            name: '李四',
+            age: 20
+        }, {
+            name: '王五',
+            age: 20
+        }]
+
+        function groupBy(objectArr, property) {
+            return objectArr.reduce((acc, obj) => {
+                var key = obj[property]
+                if (!acc[key]) {
+                    acc[key] = []
+                }
+                acc[key].push(obj);
+                return acc
+            }, {})
+        }
+        console.log(groupBy(people, 'age'));
+
+        //绑定指定的数组
+
+        var friends = [{
+            name: 'Anna',
+            books: ['Bible', 'Marry Potter'],
+            age: 21
+        }, {
+            name: 'DaWei',
+            books: ['Bibles', 'Potter'],
+            age: 20
+        }, {
+            name: 'Anna',
+            books: ['Still', 'Sale'],
+            age: 21
+        }, ]
+
+        var allBooks = friends.reduce((val, item) => [...val, ...item.books], ['myBook'])
+
+        console.log(allBooks);
+
+        //reduce数组去重
+        let arrs = [1, 2, 1, 1, 3, 4, 4, 2, 5, 6, 7, 8, 9]
+        let results = arrs.sort().reduce((val, item) => {
+            if (val.length === 0 || val[val.length - 1] !== item) {
+                val.push(item)
+            }
+            return val
+
+        }, [])
+        console.log(results);
+
+        //promise的按序执行
+        function p1(a) {
+            return new Promise((resolve, reject) => {
+                resolve(a * 5)
+            })
+        }
+
+        function p2(a) {
+            return new Promise((resolve, reject) => {
+                resolve(a * 2)
+            })
+        }
+
+        function p3(a) {
+            return new Promise((resolve, reject) => {
+                resolve(a * 3)
+            })
+        }
+
+        function p4(a) {
+            return new Promise((resolve, reject) => {
+                resolve(a * 4)
+            })
+        }
+
+        function p5(a) {
+            return new Promise((resolve, reject) => {
+                resolve(a * 5)
+            })
+        }
+
+
+        function runPromiseInSequence(arr, input) {
+            return arr.reduce((promises, currentFunc) => promises.then(currentFunc), Promise.resolve(input))
+        }
+        const PromiseArr = [p1, p2, p3, p4]
+        runPromiseInSequence(PromiseArr, 10)
+            .then(console.log)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
