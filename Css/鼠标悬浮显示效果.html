@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标悬浮显示效果</title>
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #81b29a;
+        }
+        
+        .shell {
+            width: 500px;
+            height: 100px;
+            border: solid 2px #000;
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        
+        .box {
+            width: 25%;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .box i {
+            display: block;
+            color: #3d405b;
+            font-size: 50px;
+            line-height: 100px;
+            transition: .2s;
+        }
+        
+        .box i:hover {
+            color: #f4f1de;
+            cursor: pointer;
+        }
+        
+        .shell::after {
+            content: 'Contact me';
+            font-size: 21px;
+            position: absolute;
+            right: 0;
+            top: -35px;
+            color: #f4f1de;
+        }
+        
+        .shell::before {
+            content: '';
+            position: absolute;
+            top: -21px;
+            left: 0;
+            display: block;
+            width: 76%;
+            height: 3px;
+            background-color: #f4f1de;
+        }
+        
+        .box i::after {
+            position: absolute;
+            bottom: 140px;
+            width: 100%;
+            content: attr(data-i);
+            display: block;
+            left: 0;
+            font-size: 30px;
+            color: #81b29a;
+            background-color: #f4f1de;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: .3s .2s;
+        }
+        
+        .box i:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="shell">
+        <div class="box"><i data-i='qq群：12589653' class="iconfont icon-QQ"></i></div>
+        <div class="box"><i data-i='Wx: DaXiong182' class="iconfont icon-weixin"></i></div>
+        <div class="box"><i data-i='淘宝店铺：tbaod315121' class="iconfont icon-taobao"></i></div>
+        <div class="box"><i data-i='bilibili: 大熊爱学习' class="iconfont icon-bilibili"></i></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
