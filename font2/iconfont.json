@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1228",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "f012b",
+      "unicode_decimal": 983339
+    },
+    {
+      "icon_id": "30450",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "2076279",
+      "name": " 安全中心",
+      "font_class": "anquanzhongxin",
+      "unicode": "e895",
+      "unicode_decimal": 59541
+    },
+    {
+      "icon_id": "5387520",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "eaf1",
+      "unicode_decimal": 60145
+    },
+    {
+      "icon_id": "6601861",
+      "name": "色板",
+      "font_class": "seban",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "10359992",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11372711",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e8ba",
+      "unicode_decimal": 59578
+    },
+    {
+      "icon_id": "24684981",
+      "name": "文件夹、文件",
+      "font_class": "a-wenjianjiawenjian",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    }
+  ]
+}

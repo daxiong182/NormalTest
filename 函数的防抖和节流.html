@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的防抖和节流</title>
+</head>
+
+<body>
+
+
+
+
+    <input id='btnId' type='button' value='add按钮' />
+
+    <h2 id='numId'>数字</h2>
+
+
+
+    <script>
+        let m = 0;
+        var t = null;
+        let btn = document.querySelector('#btnId');
+        let num = document.querySelector('#numId');
+
+        btn.onclick = function() {
+
+            //重置回初始化的状态
+            if (t !== null) {
+                clearTimeout(t)
+                alert('操作过于频繁')
+            }
+
+            t = setTimeout(function() {
+                num.innerHTML = ++m
+                this.t = null
+            }, 2000)
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
