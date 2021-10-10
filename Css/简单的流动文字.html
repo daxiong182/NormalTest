@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单的流动文字</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        
+        h4 {
+            font-size: 30px;
+            text-align: center;
+            background-image: -webkit-linear-gradient(left, #e9a5a6, #b8c1c0 20%, #65c0e0 40%, #aea2db 60%, #81c1d9 80%, #e9a5a7 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            /* 背景放大一倍 才有移动空间 */
+            background-size: 200% 100%;
+            animation: a 5s infinite linear;
+        }
+        
+        @keyframes a {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+    <h4>这是大大熊的CSS每日练习题</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -17,14 +17,16 @@ function getMaxCount(str) {
     }
     return '出现次数最多的字符为：' + maxCountChar + '出现的次数为：' + maxCount
 
-
 }
 
-/**
+/** 
  * 
- * @param {借用数组方法对字符串进行排序利用lastindexOf计算次数} str
- *  
- */
+ *  *  
+ *  * @param {借用数组方法对字符串进行排序利用lastindexOf计算次数} str
+ *  *
+ *  *
+ * 
+ * */
 function getMaxCount2(str) {
 
     var maxCount = 0
@@ -48,6 +50,7 @@ function getMaxCount2(str) {
 /**
  * 
  * @param {利用key-value的方式存储} str 
+ * 
  */
 function getMaxCount3(str) {
     var json = {}
