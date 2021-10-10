@@ -18,6 +18,8 @@ function circleStr(str) {
  * 方法2 将字符串进行逆序处理
  */
 
+
+
 function circleStr2(str) {
     if (str.length <= 1) return true;
     str = str.toLowerCase()
