@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>令郎的广告为和如此浮夸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(170, 190, 250);
+        }
+        
+        .shell {
+            width: 260px;
+            height: 400px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+            overflow: hidden;
+        }
+        
+        .main-top {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #5f71e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            transition: .3s;
+        }
+        
+        .line {
+            width: 8px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transform: translate(-50%);
+            background-color: rgba(255, 255, 255, .5);
+        }
+        /* .ball img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 45%;
+            width: 110px;
+            transition: .3s;
+        } */
+        
+        .ball {
+            width: 130px;
+            height: 130px;
+            background-image: url('./3.jpeg');
+            background-size: cover;
+            background-color: F#5f71e0;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, .5);
+            display: block;
+            z-index: 99;
+            transition: 6.2s;
+        }
+        
+        .main-top h2 {
+            transform: translate(-65px, -40px);
+        }
+        
+        .main-top span {
+            position: absolute;
+            writing-mode: tb-rl;
+            font-size: 5px;
+            transform: translate(100px);
+        }
+        
+        .main-bottom {
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            font-size: 5px;
+            color: #5f71e0;
+            padding: 0 3px;
+        }
+        
+        .main-bottom span {
+            display: block;
+            padding: 5px;
+        }
+        
+        .shell:hover .main-top {
+            height: 310px;
+        }
+        
+        .shell:hover .ball {
+            transform: rotate(360deg) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="shell">
+
+        <div class="main-top">
+            <h2>AJ-1</h2>
+            <div class="ball">
+
+            </div>
+            <div class="line"></div>
+            <span>Air Jordan 1 Retro High Turbo Green (GS) 蒂芙尼绿</span>
+        </div>
+
+        <div class="main-bottom">
+            <h2>Air Jordan</h2>
+            <span>
+              Russell Hobbs领豪,就是世界上第一个发明电热水壶的品牌。 
+              以西式厨电小家电产品风靡了欧美将近半个世纪,
+              其创始人Bill Russell是世界上第一个电热水壶的发明者
+            </span>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
