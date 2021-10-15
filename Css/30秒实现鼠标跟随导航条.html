@@ -6,12 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鼠标跟随导航条</title>
+    <style>
+        body {
+            background-color: rgb(60, 60, 70);
+            display: flex;
+            justify-content: center;
+        }
+        
+        .a {
+            position: relative;
+            top: 350px;
+            display: flex;
+            box-shadow: 2px 5px 15px rgb(0, 0, 0, .7);
+            border-radius: 10px;
+        }
+        
+        .a a {
+            width: 150px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            text-decoration: none;
+            color: seashell;
+        }
+        
+        .b {
+            position: absolute;
+            left: 0;
+            width: 150px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: rgb(100, 100, 130);
+            z-index: -999;
+            transition: .5s;
+        }
+        
+        .a a:nth-child(2):hover~.b {
+            left: 150px;
+        }
+        
+        .a a:nth-child(3):hover~.b {
+            left: 300px;
+        }
+        
+        .a a:nth-child(4):hover~.b {
+            left: 450px;
+        }
+        
+        .a a:nth-child(5):hover~.b {
+            left: 600px;
+        }
+    </style>
 </head>
 
 <body>
 
 
 
+    <div class="a">
+        <a href="#">阿巴</a>
+        <a href="#">阿巴</a>
+        <a href="#">阿巴</a>
+        <a href="#">阿巴</a>
+        <a href="#">阿巴</a>
+        <a href="#" class="b"></a>
+    </div>
 
 
 
