@@ -1,7 +1,7 @@
 function getString(str) {
 
     switch (str) {
-        case '1':
+        case '5':
             console.log('10');
             break;
         case '2':
