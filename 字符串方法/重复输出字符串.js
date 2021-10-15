@@ -19,3 +19,13 @@ function repeat2(target, n) {
 function repeat3(target, n) {
     return Array.prototype.join.call({ length: n + 1 }, target);
 }
+
+
+
+
+
+
+
+
+
+
