@@ -43,3 +43,9 @@ console.log(indexEnd);
 var arr9 = [1, 2, 3, 9, 4, 6]
 let flag = arr9.includes(3)
 console.log(flag);
+
+
+
+
+
+

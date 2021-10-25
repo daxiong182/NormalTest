@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+
+
+    <!-- Promise 的·基本使用 Promise是一个构造函数 可以通过new方法 实例化对象 -->
+
+    <!-- 语法: new Promise(()=>{}) 接收一个函数作为参数  内部函数的参数为 1.resolve 2.reject  ：resolve()成功时调用的函数  reject()失败时调用的函数  -->
+
+    <!-- Promise() 实例的状态 1.pending(准备,进行中)  2.fulfilled(已完成) 3.rejected(拒绝 失败的状态) -->
+
+    <!-- Promise() 状态的改变是一次性的  -->
+
+
+    <script>
+        const p = new Promise((resolve, reject) => {
+            resolve()
+                // reject() Promise的状态只能被改变一次
+
+        })
+        console.dir(p)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

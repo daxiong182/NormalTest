@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档碎片</title>
+</head>
+
+<body>
+
+
+    <ul class="list">
+
+    </ul>
+
+
+
+    <script>
+        // console.log(DocumentFragment.prototype); //是Node 节点的一种和Element平级
+        // console.log(Node.prototype);
+        // console.log(Element.prototype);
+
+        var oUl = document.getElementsByClassName('list')[0]
+
+        //不使用文档碎片
+
+        // for (let i = 0; i < 100; i++) {
+        //     var oLi = document.createElement('li')
+        //     oLi.innerHTML = i + ':js++';
+        //     //每追加一次 页面就重绘一次
+        //     oUl.appendChild(oLi)
+        // }
+
+        //使用文档碎片
+        // var flag = document.createDocumentFragment() //内存当中的盒子
+        // for (let i = 0; i < 100; i++) {
+        //     var li = document.createElement('li')
+        //     li.innerHTML = i + '你好啊'
+        //     flag.appendChild(li) //向文档碎片中添加内容 不会重新渲染dom 节省内存 IE不适合
+        // }
+        // oUl.appendChild(flag)
+
+
+        let li = ''
+            // let list = document.createElement('li')
+        for (let i = 0; i < 100; i++) {
+            li += '<li>' + i + '你好啊' + '</li>'
+        }
+        //innerHTML 可以识别字符串中的Html标签 innerText不可以识别字符串中的标签  通用
+        oUl.innerHTML = li
+        
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

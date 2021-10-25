@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制html的另类方法</title>
+</head>
+
+<body>
+
+
+
+
+    <input type="text" id='os'>
+
+    <div id='ordinate' data-x='你好' data-y='我不好'></div>
+
+    <form action="" name='登录表单'>
+
+        <div>
+            <label for="">账号</label>
+            <input type="text" name='账号'>
+        </div>
+
+        <div>
+            <label for="">密码</label>
+            <input type="text" name='密码'>
+        </div>
+
+    </form>
+
+    <script>
+        //通过id直接控制
+        os.value = 'lsfkdg'
+
+        //id 配合data-xxxxx 取出自定义值
+        alert(ordinate.dataset.y)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

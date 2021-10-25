@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromiseMethods</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script>
+        const p = new Promise((resolve, reject) => {
+            //
+            resolve('wahaha')
+        })
+
+        //p.then() //then()方法接收两个参数 第一个参数是一个函数 第二个参数还是一个函数
+        //then() 方法最主要的功能是 拿到Promise对象返回的结果
+
+        //只有当Promise的状态改变resolve/reject时 才会执行then(callback1,callback2)方法里的回调函数   pendding时不会执行then()方法里的回调
+        //当then()方法执行成功的回调时 如果回调函数中的语句有报错 则其状态改变为:reject。下一次then()方法 执行失败回调
+        p.then((value) => {
+            console.log('成功时调用' + value);
+            //使用return 可以将Promise实例的状态 改为 fulfilled
+            //console.log(a); //这段代码会报错 后面.then 会执行第二个回调
+            return 123 //如果不设置返回值 后面.then()方法 执行成功回调 接收的参数为 undefined
+        }, (reason) => {
+            console.log('失败时调用');
+
+        }).then(
+            (value) => {
+                console.log('成功时调用222: ' + value);
+            },
+            (reason) => {
+                console.log('失败时调用: ' + reason);
+            }
+        )
+
+        console.log(p);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

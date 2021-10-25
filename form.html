@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body {
+            height: 50vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <form action="我的网页.html" method='get' name='myform'>
+
+        <p>名字：<input type="text" name='username' value='大大熊' readonly disabled></p>
+        <p>名字：<input type="password" name='password' required></p>
+        <!-- 文件域 -->
+        <p>
+            <input type="file" name='files'>
+        </p>
+
+        <!-- 滑块 -->
+        <p>
+            <input type="range" name='range' min='0' max='100' step='2'>
+        </p>
+
+        <!-- 搜索框 -->
+        <p>
+            <input type="search" name='search'>
+        </p>
+
+        <p>
+            自定义邮箱：
+            <input type="text" pattern='/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/'>
+        </p>
+
+        <p style="text-align: center;">
+            <input type="submit" name='button' value='提交'>
+            <input type="reset" name='reset' value='重置'>
+        </p>
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

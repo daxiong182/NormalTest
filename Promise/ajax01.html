@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01</title>
+    <script src="./jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: './data1.json',
+            success: function(res) {
+                console.log(res);
+                const {
+                    id
+                } = res
+
+                //思考 在哪里发送ajax请求
+                $.ajax({
+                    type: 'GET',
+                    url: './data2.json',
+                    data: {
+                        id
+                    },
+                    success: function(res) {
+                        console.log(res);
+                        const {
+                            username
+                        } = res
+
+                        $.ajax({
+                            type: 'GET',
+                            url: './data3.json',
+                            data: {
+                                username
+                            },
+                            success: function(res) {
+                                console.log(res);
+                            }
+                        })
+
+                    }
+                })
+
+            }
+
+
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里前端面试题</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script>
+        var name = 222
+        var a = {
+            name: 111,
+            say: function() {
+                console.log(this.name);
+            }
+        }
+
+        var fun = a.say
+        fun()
+        a.say()
+
+
+        var b = {
+            name: 333,
+            say: function(fun) {
+                fun()
+            }
+        }
+
+        b.say(a.say)
+
+
+        b.say = a.say
+        b.say()
+
+
+        var x = 11;
+        var obj = {
+            x: 22,
+            get() {
+                return () => console.log(this.x);
+            }
+        }
+
+        obj.get()()
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

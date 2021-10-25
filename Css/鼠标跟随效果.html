@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标跟随效果</title>
+    <style>
+        body {
+            background-color: #fefefe;
+        }
+        
+        .img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-image: url('./images/0071.gif');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+    <div class="img">
+
+    </div>
+
+
+
+
+
+    <script>
+        let img = document.querySelector('.img');
+
+        let deg = 0;
+
+        let imgx = 0;
+
+        let imgy = 0;
+
+        let imgl = 0;
+
+        let imgt = 0;
+
+        let y = 0;
+
+        let index = 0;
+
+
+        window.addEventListener('mousemove', function(xyz) {
+            //获取页面左侧距离图片的位置
+            imgx = xyz.x - img.offsetLeft - img.clientWidth / 2
+
+            //获取页面顶部距离图片的位置
+            imgy = xyz.y - img.offsetTop - img.clientHeight / 2
+
+            //定义图片旋转角度
+            deg = 360 * Math.atan(imgy / imgx) / (2 * Math.PI)
+
+            index = 0;
+
+            //定义当前鼠标位置
+            let x = event.clientX
+
+            if (img.offsetLeft < x) {
+                y = -180
+            } else {
+                y = 0
+            }
+        })
+
+        setInterval(() => {
+            img.style.transform = 'rotateZ(' + deg + 'deg) rotateY(' + y + 'deg)'
+            index++
+            //设置小图片的位置和速度
+            if (index < 50) {
+                imgl += imgx / 50
+                imgt += imgy / 50
+            }
+            img.style.left = imgl + 'px'
+            img.style.top = imgt + 'px'
+        }, 10)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
