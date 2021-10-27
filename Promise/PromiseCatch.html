@@ -24,9 +24,13 @@
 
         })
 
-        p.catch(() => {
+          //catch 的执行时机 1.当Promise的状态改为reject时 2. 当Promise中执行的代码有任何错误的时候
+        p.catch(() => {//catch()和then(callback1,callback2)中的callback2 都会在代码出错的时候执行
             console.log('失败');
         })
+
+
+
 
 
 

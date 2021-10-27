@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机文字弹出效果</title>
+    <style>
+        body {
+            background-color: rgb(35, 35, 35);
+            cursor: pointer;
+        }
+        
+        span {
+            font-size: 20px;
+            color: blanchedalmond;
+            position: absolute;
+            transition: 1s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        let arr = [　
+            "人的生命，似洪水奔流，不遇着岛屿和暗礁，难以激起美丽的浪花。",
+            "现实是此岸，理想是彼岸，中间隔着湍急的河流，行动则是架在河上的桥梁。",
+            "人的价值是由自己决定的。",
+            "燧石受到的敲打越厉害，发出的光就越灿烂。",
+            "正如恶劣的品质可以在幸运中暴露一样，最美好的品质也是在厄运中被显示的。",
+            "有时候，垃圾只是放错位置的人才。",
+            "你永远要感谢给你逆境的众生。",
+            "你永远要宽恕众生，不论他有多坏，甚至他伤害过你，你一定要放下，才能得到真正的快乐。"
+        ]
+
+        document.onclick = function(x) {
+
+            let span = document.createElement('span')
+
+            span.style.left = x.clientX + 'px'
+            span.style.top = x.clientY + 'px'
+
+            span.innerHTML = arr[Math.floor(Math.random() * arr.length)]
+
+            setTimeout(() => {
+                span.style.opacity = '1'
+                span.style.transform = 'translateY(-100px)'
+            }, 100)
+
+            setTimeout(() => {
+                span.style.opacity = '0'
+                span.style.transform = 'translateY(-230px)'
+            }, 1500)
+
+            var chi = document.getElementsByTagName('span')
+            for (var i = 0; i < chi.length; i++) {
+                if (chi[i].style.opacity === 0) {
+                    document.body.removeChild(chi[i])
+                }
+            }
+
+            document.body.appendChild(span)
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

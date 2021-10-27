@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回顾节流与防抖</title>
+    <style>
+        .container {
+            height: 800px;
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+            overflow: hidden;
+            overflow-y: auto;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background-color: #eee;
+        }
+        
+        .son {
+            width: 249px;
+            background-color: blanchedalmond;
+            height: 2700px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+    <input type="search">
+
+    <div class="container">
+        <div class="son">
+
+        </div>
+    </div>
+
+
+    <script>
+        let el = document.querySelector('input');
+        // let timer = null
+        // el.addEventListener('input', function() {
+        //     timer && clearInterval(timer)
+        //     timer = setTimeout(() => {
+        //         console.log(this.value);
+        //     }, 500)
+        // })
+
+        el.addEventListener('input', debounce(function() {
+            console.log(this.value);
+        }, 1000))
+
+        /*
+        func:需要防抖的函数
+        duration:防抖的时长，默认是500ms
+        */
+        function debounce(func, duration = 500) {
+
+            let timer = null
+
+            return function(...args) {
+                //关闭上一次的
+                timer && clearInterval(timer)
+                    //再开启一个新的
+                timer = setTimeout(() => {
+                    typeof func === 'function' && func.call(this, ...args)
+                }, duration)
+
+            }
+        }
+
+
+        //节流函数
+
+        let prev = 0;
+        let con = document.querySelector('.container')
+        con.addEventListener('scroll', function() {
+            if (new Date() - prev >= 500) {
+                console.log(this);
+                console.log(this.scrollTop);
+                prev = new Date()
+            }
+
+        })
+
+
+
+
+
+
+
+
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
