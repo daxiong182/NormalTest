@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片按需加载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 1200px;
+        }
+        
+        .div500 {
+            width: 500px;
+            height: 120px;
+            margin: 0 auto;
+            background: #f00;
+        }
+        
+        .main {
+            width: 100px;
+            height: 500px;
+            margin: 0 auto;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main"></div>
+    <div class="div500" id='div1'></div>
+
+
+
+
+
+
+    <script>
+        window.onscroll = function() {
+            var _div1 = document.querySelector('#div1');
+            var _area = _div1.getBoundingClientRect(); //相对于页面位置的集合
+            var _totalH = document.body.clientHeight;
+
+            console.log(_area);
+            console.log(_totalH);
+
+            if ((_area.top + 800) < _totalH) {
+                _div1.style.background = '#0f0'
+            } else {
+                _div1.style.background = '#f00'
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

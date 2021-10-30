@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agruments</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        //1.arguments 在函数外部是无法访问的
+        function foo() {
+            console.log(typeof arguments);
+        }
+        foo()
+
+        //2.可以通过索引进行访问
+        function sum(num1, num2) {
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+            console.log(arguments);
+        }
+        //3.arguments 是由实参决定的
+        //3.1 arguments 的.length属性在调用时就已经确定 不会随着函数的执行而改变
+        //3.2 指定的形参在传递了实参的情况下 arguments和形参会保持相同 并可以相互改变
+        //3.3 没有传递实参的情况下 返回undefined
+        //3.4 arguments.callee属性 指向当前正在被执行的function对象
+        sum()
+
+        function create() {
+
+            return function(n) {
+                if (n < 1) {
+                    return 1
+                } else {
+                    return n * arguments.callee(n - 1)
+                }
+            }
+        }
+
+        var result = create()(5)
+        console.log(result);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
