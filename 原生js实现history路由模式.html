@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js实现history路由模式</title>
+    <style>
+        ul {
+            list-style: none;
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            top: 15vh;
+        }
+        
+        ul li {
+            line-height: 60px;
+            font-size: 45px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <ul>
+        <li><a id='as' data-url='#/aa'>aaa</a></li>
+        <li><a data-url='#/bb'>bbb</a></li>
+        <li><a data-url='#/cc'>ccc</a></li>
+        <div id='divId'>默认内容</div>
+    </ul>
+
+
+
+
+
+
+    <script>
+        var _routeData = [{
+            path: '#/aa',
+            pathData: 'aaaaaaaa页面'
+        }, {
+            path: '#/bb',
+            pathData: 'bbbbbbbb页面'
+        }, {
+            path: '#/cc',
+            pathData: 'cccccccc页面'
+        }]
+
+        let _aBtn = document.querySelectorAll('a');
+
+        let content = document.querySelector('#divId');
+
+        let _path;
+
+        for (var i = 0; i < _aBtn.length; i++) {
+            //批量监听按钮事件
+            _aBtn[i].addEventListener('click', function() {
+                _path = this.getAttribute('data-url')
+                history.pushState({
+                    a: '我是大熊'
+                }, null, _path)
+                refreshFn(_path)
+            })
+        }
+
+        function refreshFn(_path) {
+            _routeData.map(item => {
+                if (_path == item.path) {
+                    content.innerHTML = item.pathData
+                }
+            })
+
+        }
+
+        window.addEventListener('popstate', function(_o) {
+            console.log(_o);
+            refreshFn(location.hash)
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本溢出</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .p1 {
+            width: 180px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        .p2 {
+            width: 200px;
+            height: 90px;
+            margin-left: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .p2::after {
+            position: absolute;
+            content: '...';
+            padding-left: 40px;
+            bottom: 0;
+            right: 5px;
+            background: linear-gradient(to right, transparent, #fff 72%);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+    <p class="p1">
+        单行文本溢出，呈现小圆点样式
+    </p>
+
+    <br>
+
+    <p class="p2">
+        多行文本溢出，呈现小圆点样式,多行文本溢出，呈现小圆点样式,多行文本溢出，呈现小圆点样式.呈现小圆点样式,多行文本溢出，呈现小圆点样式.
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
