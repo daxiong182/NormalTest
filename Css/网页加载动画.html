@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页加载动画</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            transition: 3s ease;
+        }
+        
+        #box:hover {
+            width: 400px;
+            background-color: greenyellow;
+        }
+        
+        #content {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 100px;
+            transition: 1s;
+            /* transition 分步 */
+            transition-timing-function: steps(3);
+        }
+        /* active鼠标按下 */
+        
+        #content:active {
+            width: 200px;
+            background-color: #00f;
+            color: greenyellow;
+        }
+        
+        #content2 {
+            height: 200px;
+            width: 200px;
+            background-color: greenyellow;
+            margin-top: 20px;
+            transition: 1s;
+        }
+        
+        #content2:hover {
+            transform: rotate(45deg);
+            transform-origin: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="box">
+
+    </div>
+
+    <div id="content">hello</div>
+
+
+    <div id="content2">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

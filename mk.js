@@ -5,3 +5,6 @@
 import user from './c'
 
 console.log(user.name);
+
+
+

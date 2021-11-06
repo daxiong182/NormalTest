@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断大括号是否闭合</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        function isBalanced(str) {
+            if (str.charAt(0)) {
+                return '不闭合'
+                return false
+            }
+            const stack = []
+            for (let c of str) {
+                if (c === '{') {
+                    stack.push(c)
+                } else if (c === '}') {
+                    stack.pop(c)
+                }
+            }
+            if (stack.length === 0) {
+                return '闭合'
+            } else {
+                return '不闭合'
+            }
+        }
+
+        var expression = '{{}{}{}}'
+
+        var expressionFalse = '{{}}{}'
+
+        console.log(isBalanced(expressionFalse));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

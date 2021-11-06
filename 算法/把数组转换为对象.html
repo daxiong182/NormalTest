@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>把数组转换为对象</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script>
+        function arryToObject(arr) {
+            return arr.reduce((sum, {
+                name,
+                class: clazz
+            }) => {
+                sum[clazz] = sum[clazz] || []
+                sum[clazz].push(name)
+                return sum
+            }, {})
+        }
+
+        const arr = [{
+            name: '1年级3班',
+            class: 'A'
+        }, {
+            name: '2年级3班',
+            class: 'B'
+        }, {
+            name: '3年级3班',
+            class: 'C'
+        }, {
+            name: '4年级3班',
+            class: 'D'
+        }, ]
+
+        console.log(arryToObject(arr));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

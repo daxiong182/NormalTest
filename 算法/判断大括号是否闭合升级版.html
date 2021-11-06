@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断大括号是否闭合升级版</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function isBalanced(str) {
+            const stack = []
+                // 左括号
+            const left = ['{', '[', '(']
+                // 右括号
+            const right = ['}', ']', ')']
+            if (right.includes(str.charAt(0))) {
+                return false
+            }
+            for (let c of str) {
+                //如果当前c在left数组中 让其入栈
+                if (left.includes(c)) {
+                    stack.push(c)
+                } else if (right.includes(c)) {
+                    // 如果当前c在right数组中且在left中 让其出栈
+                    const el = stack.pop()
+                    if (left.indexOf(el) !== right.indexOf(c)) {
+                        return false
+                    }
+                    return true
+
+                }
+            }
+
+
+        }
+
+
+
+
+        var expressionStr1 = '{[]}()'
+        var expressionStr2 = ')({[]}()'
+        var expressionStr3 = '{[[]()]}'
+        var expressionStr4 = '{(]()[]}'
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

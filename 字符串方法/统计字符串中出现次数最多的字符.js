@@ -19,6 +19,7 @@ function getMaxCount(str) {
 
 }
 
+
 /** 
  * 
  *  *  
@@ -27,6 +28,8 @@ function getMaxCount(str) {
  *  *
  * 
  * */
+
+
 function getMaxCount2(str) {
 
     var maxCount = 0
