@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用calss类创建对象</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        class Student {
+            //创建构造函数
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            //创建成员方法 注意：成员方法不用function修饰
+            sayHi(msg) {
+                console.log(this.name + msg);
+            }
+
+        }
+
+
+        //创建子类
+        class Son extends Student {
+
+            constructor(name, age, gender) {
+                super(name, age)
+                this.gender = gender
+            }
+
+        }
+
+        //如果子类不重写父类的方法 默认调用的方法和父类相同
+        const s1 = new Son('haha')
+        s1.sayHi('你好啊')
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

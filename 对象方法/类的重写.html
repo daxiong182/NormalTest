@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类的重写</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        function Person(name, age) {
+            var name = arguments.length > 0 && arguments[0] != undefined ? arguments[0] : name
+            var age = arguments.length > 0 && arguments[1] != undefined ? arguments[1] : age
+
+            classCheck(this, Person)
+
+            this.name = name
+            this.age = age
+
+        }
+
+        var createClass = (function() {
+            function defineProperties(target, props) {
+                for (var i = 0; i < props.length; i++) {
+                    var descriptor = props[i];
+                    descriptor.enumerable = descriptor.enumerable || false
+                    descriptor.configurable = descriptor.configurable || true
+
+                    Object.defineProperty(target, descriptor.key, descriptor)
+
+                }
+            }
+            return function(constructor, protoProps, staticProps) {
+
+                if (protoProps) defineProperties(constructor.prototype, protoProps);
+
+                if (staticProps) defineProperties(constructor, staticProps);
+            }
+        })()
+
+        function classCheck(instance, constructor) {
+            //方法一:
+            // if (typeof new.target === undefined) {
+            //     return new Error('必须通过new 执行')
+            // }
+
+            //方法二:
+            if (!(instance instanceof constructor)) {
+                throw new Error('必须通过new 执行')
+            }
+
+        }
+
+        createClass(Person, [{
+            key: 'say',
+            value: function() {
+                console.log('Hi');
+            }
+        }, {
+            key: 'sayHi',
+            value: function() {
+                console.log('hello');
+            }
+        }])
+
+        let student = new Person('张三')
+        console.dir(student)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

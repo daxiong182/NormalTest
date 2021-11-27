@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的用途</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        //1.值缓存
+        var cachedBox = (function() {
+            //缓存容器
+            var cache = {};
+            return {
+                searchBox: function(id) {
+                    if (id in cache) {
+                        return '查找到的结果是：' + cache[id]
+                    }
+                    var result = dealFn(id)
+                    cache[id] = result
+                    return '查找到的结果是：' + result;
+                }
+
+            }
+
+        })()
+
+
+        function dealFn(id) {
+            console.log('这是一段耗时操作');
+            return id;
+        }
+
+
+        //闭包的第二个用法 封装 栈:先进后出
+
+        var stack = (function() {
+            let arr = []
+            return {
+                push(value) {
+                    arr.push(value);
+                },
+                pop() {
+                    return arr.pop()
+                },
+
+                length: arr.length
+
+
+            }
+
+        })()
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

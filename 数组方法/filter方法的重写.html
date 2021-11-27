@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter方法的重写</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var arr = [2, 3, 4, 5, 6, 9, 11]
+
+
+        var obj = {}
+
+
+        var res = arr.filter(item => item % 2 === 0)
+        console.log(res);
+
+
+        //重写
+        Array.prototype.filter1 = function(fn) {
+            var arr = this
+            var context = arguments[1] || window
+            var res = []
+            if (typeof fn === 'function') {
+                for (var i = 0; i < arr.length; i++) {
+                    fn.apply(context, [arr[i], i, arr]) ? res.push(arr[i]) : undefined
+                }
+            } else {
+                throw new Error('参数必须是Function')
+            }
+
+            return res
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

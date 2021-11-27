@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this到底指向谁</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        var o1 = {
+            number: 1,
+            getNumber: function(num) {
+                return this.number + num
+            }
+        };
+        var o2 = {
+            number: 2,
+        }
+
+        console.log(o1.getNumber.call(o2, 2));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

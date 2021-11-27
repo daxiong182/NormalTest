@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 正则表达式中的() 主要用于分组和捕获。 exec('str') 用来检测字符串中有没有符合要求的字符 (?:) 非捕获，即分组后不捕获
+        console.log(/(ab){2}/.exec('abab'));
+
+        console.log(/(\d{4})-(?:\d{2})-(\d{2})/.exec('2021-11-14'));
+
+        console.log('--------------------------------------------');
+
+        //修辞 (环视)
+        console.log(/a(?=b)/.exec('abc')); //紧跟着有 b 修辞不匹配
+
+        console.log(/a(?!b)/.exec('ac')); //紧跟着没有 b 修辞不匹配
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

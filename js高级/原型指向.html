@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型指向</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <script>
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        var p1 = new Person('张三', 20)
+
+        console.log(p1)
+
+        //原型对象方法里的this 谁调用就指向谁
+
+        //判断一个方法是不是属于实例对象本身
+        Person.prototype.run = function() {
+            console.log(this.name + '正在蹦跑');
+        }
+
+        console.log(p1.hasOwnProperty('run'));
+
+        //判断一个对象是否在某个对象的原型链上
+        console.log(Object.prototype.isPrototypeOf(p1));
+        console.log(Array.prototype.isPrototypeOf(p1));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

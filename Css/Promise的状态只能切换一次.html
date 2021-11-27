@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise的状态只能切换一次</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script>
+        let _obj = new Promise((resolve, reject) => {
+            // resolve('没问题111')
+            // reject('error 有问题')
+            // resolve('没问题222')
+        })
+
+
+
+        _obj.then((res) => {
+            console.log('成功:', res);
+        })
+
+        .catch((err) => {
+            console.log('报错', err);
+        })
+
+        console.log(_obj);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

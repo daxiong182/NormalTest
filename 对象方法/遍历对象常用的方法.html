@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历对象常用的方法</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var obj = {
+            name: '张三',
+            age: 28,
+            show: function() {
+                console.log('good');
+            }
+        }
+
+
+        obj.prototype.address = 'China'
+
+        //for in 方法 遍历对象的所有可枚举属性
+        for (let key in obj) {
+            console.log(key, obj[key]);
+
+        }
+
+        //Object.keys(obj) 该方法返回的是对象所有'键'组成的数组
+        console.log(Object.keys(obj));
+
+        //Object.getOwnPropertyNames(obj) 该方法返回对象所有'值'组成的数组
+        console.log(Object.getOwnPropertyNames(obj));
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

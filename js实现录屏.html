@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js实现视频录制</title>
+    <style>
+        .mybutton {
+            padding: 5px 10px;
+            background: rgba(177, 206, 236);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <video class="video" width='600px' controls></video>
+    <br>
+    <button class="mybutton">record</button>
+
+
+
+
+    <script>
+        let btn = document.querySelector('.mybutton')
+
+        btn.addEventListener('click', async function() {
+            let stream = await navigator.mediaDevices.getDisplayMedia({
+                video: true
+            })
+
+            const mime = MediaRecorder.isTypeSupported('video/webm;codecs=vp9') ? 'video/webm;codecs=vp9' : 'video/webm'
+            let mediaRecorder = new MediaRecorder(stream, {
+                mimeType: mime
+            })
+
+            let chunks = []
+            mediaRecorder.addEventListener('dataavailable', function(e) {
+                chunks.push(e.data)
+            })
+
+            mediaRecorder.addEventListener('stop', function() {
+                let blob = new Blob(chunks, {
+                    type: chunks[0].type
+                })
+                let url = URL.createObjectURL(blob)
+
+                let a = document.createElement('a')
+                a.href = url
+                a.download = 'video.webm'
+                a.click()
+            })
+
+            mediaRecorder.start()
+
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
