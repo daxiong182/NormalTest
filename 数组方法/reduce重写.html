@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce重写</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6]
+
+        var obj = {}
+
+        let result = arr.reduce((prev, item, index, arr) => {
+            return prev + item
+        }, 0)
+        console.log(result);
+
+        Array.prototype.reduce1 = function(fn, prev) {
+            var arr = this
+            i = 0;
+            if (typeof fn !== 'function') {
+                throw new Error('第一个参数必须是函数')
+            }
+
+            if (typeof prev === 'undefined') {
+                prev = arr[0];
+                i = 1;
+
+            }
+
+            for (; i < arr.length; i++) { // for 循环的第一个位置是用来赋初始值的 如果 外部已经给定初始值了 那么第一个位置可以不写
+                prev = fn(prev, arr[i], i, arr);
+            }
+
+            return prev;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

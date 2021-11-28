@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromiseAll重写</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        const delay = player => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(player)
+                        //reject(new Error('失败了'))
+                }, Math.random() * 1000)
+            })
+        }
+
+        const p1 = delay('库里')
+        const p2 = delay('杜兰特')
+        const p3 = delay('乔治')
+
+
+        // Promise.all([p1, p2, p3]).then(res => {
+        //     console.log(res)
+        // }, err => {
+        //     console.log(err);
+        // })
+
+        // Promise.race([p1, p2, p3]).then(res => console.log(res))
+
+        Promise._all = function(array) {
+            //返回一个新的Promise实例
+            return new Promise((resolve, reject) => {
+                //存储所有Promise成功的结果
+                const results = []
+                let count = 0
+                    //遍历数组，依次取出每个元素单独处理
+                for (let i = 0; i < array.length; i++) {
+                    const item = array[i]
+                        //判断item是不是Promise实例
+                    if (item.constructor === Promise) {
+                        item.then(data => {
+                            results[i] = data
+                            count++
+                            //异步结束的标志
+                            if (count === array.length) {
+                                resolve(results)
+                            }
+
+                        }, reject)
+
+                    } else {
+                        results[i] = item
+                        count++
+                    }
+                }
+            })
+
+        }
+
+
+        Promise._all([p1, p2, p3]).then(res => {
+            console.log(res)
+        }, err => {
+            console.log(err);
+        })
+
+
+
+
+        //方法二
+        Promise._all2 = function(array) {
+
+            //递归 等前一个Promise异步结束之后 继续执行下一个Promise
+            return new Promise((resolve, reject) => {
+                const results = []
+                next(0)
+
+                function next(i) {
+                    //从参数数组中取出一个参数
+                    const item = array[i]
+                        //判断取出的参数有没有值
+                    if (!item) {
+                        resolve(results)
+                        return
+                    }
+                    //判断这个元素是不是Promise实例
+                    if (item instanceof Promise) {
+                        item.then(data => {
+                            results.push(data)
+                            next(i + 1)
+                        }, reject)
+                    } else {
+                        results.push(item)
+                        next(i + 1)
+
+
+                    }
+                }
+            })
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
