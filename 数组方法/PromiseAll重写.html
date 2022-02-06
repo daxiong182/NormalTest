@@ -47,6 +47,7 @@
                     const item = array[i]
                         //判断item是不是Promise实例
                     if (item.constructor === Promise) {
+
                         item.then(data => {
                             results[i] = data
                             count++
@@ -101,7 +102,6 @@
                     } else {
                         results.push(item)
                         next(i + 1)
-
 
                     }
                 }

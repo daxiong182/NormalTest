@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组去重</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        //方法一: new Set() 生成新数组
+        array = [1, 2, 3, 5, 57, 10, 3];
+
+        // let arr2 = [...new Set(array)]
+
+        // console.log(arr2);
+
+        //方法二 : 影响原数组
+        // for (let i = 0; i < array.length; i++) {
+        //     for (let j = i + 1; j < array.length; j++) {
+        //         if (array[i] === array[j]) {
+        //             array.splice(j, 1);
+        //             j--
+        //         }
+        //     }
+        // }
+
+        //方法三 ：reduce
+        let arr3 = array.reduce((accu, cur) => {
+            if (!accu.includes(cur)) {
+                accu.push(cur)
+            }
+            return accu
+        }, [])
+        console.log(arr3)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

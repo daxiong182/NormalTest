@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写new</title>
+</head>
+
+<body>
+
+
+    <script>
+        Function.prototype._new = function() {
+            var fn = this;
+            var obj = Object.create(fn.prototype)
+            var res = fn.apply(obj, arguments)
+            return res instanceof Object ? res : obj;
+        }
+
+        function Person(name) {
+            this.name = name;
+            return '123'
+        }
+
+        Person.prototype.say = function() {
+            console.log('hello');
+        }
+
+        var p = Person._new('lisi')
+        p.say()
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

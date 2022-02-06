@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维数组的全排列</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        // let arr = [
+        //     [9, 10],
+        //     [3, 4],
+        //     [5, 6]
+        // ]
+
+        // printArr(arr, 0);
+
+        // function printArr(arr, n, res) {
+
+        //     for (var i = 0; i < arr[i].length; i++) { //跑完两次外层大循环 9 // 10 都有了 
+
+        //         if (n == 0) {
+        //             res = []
+        //         }
+
+        //         if (n < arr.length) {
+        //             var _res = res.slice()
+        //             _res.push(arr[n][i])
+
+        //             // console.log('_res: ', _res);
+        //         }
+
+        //         if (n == arr.length - 1) {
+        //             console.log(_res);
+        //         } else {
+        //             //这段代码优先 内层循环嵌套三次先走完 从第二次开始 每次都产生一个新的外层for循环 在此处分叉
+        //             printArr(arr, n + 1, _res)
+        //         }
+
+        //     }
+
+        // }
+
+
+        let count = 0;
+
+        //有30级台阶 每次只能跨一级或两级 共有·多少种走法？
+        function step(n, res) {
+
+            if (n == 0) {
+                res = []
+            }
+            var i = 1;
+            while (i < 3) {
+                if (n + i <= 30) {
+                    var _res = res.slice()
+                    _res.push(i)
+                    if (n + i == 30) {
+                        ++count
+                        console.log(count);
+                    } else {
+                        step(n + i, _res)
+                    }
+
+                }
+                i++
+            }
+
+        }
+
+
+
+        step(0);
+
+        console.log(Array.prototype.fill.call({
+            length: 5
+        }, 6));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

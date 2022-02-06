@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toString</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // class Pretty {
+        //     constructor(name, feature) {
+        //         this.name = name
+        //         this.feature = feature
+        //     }
+        //     toString() {
+        //         console.log(this.name + '漂亮');
+        //     }
+        // }
+
+        // const mm = new Pretty('古力娜扎', '漂亮')
+
+        // console.log(mm.toString());
+
+
+        var _name = 'global'
+
+        var obj = {
+
+            func() {
+                const innerFunc = () => {
+                    console.log(this._name);
+                }
+                return innerFunc;
+            },
+
+
+            _name: 'local',
+        }
+
+        //语句一
+        obj.func()();
+        //语句二
+        // var func = obj.func;
+        // func()() //=>window.func()()
+        //语句三
+        obj.func.bind()()() //bind不绑定执行对象 默认不绑定
+
+        obj.func.bind({
+            _name: 'bindObj'
+        }).apply({
+            _name: '张三'
+        })()
+
+        console.log(document.toString());
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

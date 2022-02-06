@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现数据的栈结构</title>
+</head>
+
+<body>
+
+
+    <script>
+        class Stack {
+            constructor() {
+                    this.items = [];
+                }
+                //入栈 栈顶添加
+                in (value) {
+                    this.items.push(value)
+                }
+                //出栈
+            out() {
+                    if (this.size() === 0) return null;
+                    return this.items.pop()
+                }
+                //弹栈 取值
+            top() {
+                    if (this.size() === 0) return null;
+                    return this.items[this.size() - 1]
+                }
+                //栈的长度
+            size() {
+                return this.items.length
+            }
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+    <!-- 注意字符串所有的（实例）方法都不会改变原字符串 因为字符串本身是只读的-->
+
+
+    <script>
+        let str = '技术皮瑞 '
+        console.log(str.repeat(2));
+
+
+        //startWidth endWidth 判断字符串是否以某个字符开头/结尾
+
+        let str2 = 'http://localhost:8080'
+        console.log(str2.startsWith('htt'));
+
+
+        let str3 = '技术皮瑞'
+        console.log(str.padStart(12, 'love'));
+        console.log(str.padEnd(8, 'loves'));
+
+        console.log('----------------------------------------------');
+        //字符串的实例方法 trimStart() trimEnd() trim()
+        let str4 = '  厉害 啊  '
+        console.log(str4);
+        console.log(str4.trimStart());
+
+        //YYDS
+        let str5 = 'YY 牛牛D5'
+        console.log(str5.replaceAll(/Y/g, 'N'))
+
+        console.log('-------------------------------------------------------------------');
+        console.log(str5.replaceAll(/Y/g, (item, index, str) => {
+
+            return item + `${index}`
+
+        }))
+
+        //1.各位补零
+
+        function padZero(n) {
+            return String(n).padStart(2, '0');;
+        }
+
+        console.log(padZero(9));
+
+
+        function removeAllSpace(str) {
+            return str6.replaceAll(/\s+/g, '')
+        }
+        let str6 = 'China YYDS'
+        console.log(removeAllSpace(str));
+        console.log('-------------------------------------------------');
+
+        let str7 = 'TMD,我服了,这tmd真是个SB'
+
+        console.log(str7.replaceAll(/TMD|tmd|SB/g, item => '*'.repeat(item.length)))
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拷贝中的继承</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        function myExtends(obj, cloneObj) {
+
+            if (typeof obj !== 'object') {
+                return false;
+            }
+            cloneObj = cloneObj || {}
+            for (var i in obj) {
+                if (typeof obj[i] === 'object' && typeof obj[i] !== null) {
+                    cloneObj[i] = (obj[i] instanceof Array) ? [] : {}
+                    myExtends(obj[i], cloneObj[i])
+                } else {
+                    cloneObj[i] = obj[i]
+                }
+
+            }
+            return cloneObj;
+        }
+
+
+
+
+        function Super(arg) {
+            this.value = arg
+        }
+
+        Super.prototype.getValue = function() {
+            return this.value;
+        }
+
+        //使用构造函数继承
+        function Sub() {
+            Super.call(this, [1, 2, 3])
+        }
+
+        //使用原型链继承
+        //Sub.prototype = Object.create(Super.prototype);
+
+        //使用拷贝的方式实现原型链的继承
+        Sub.prototype = myExtends(Super.prototype)
+
+
+
+        var sub1 = new Sub();
+
+        console.log(sub1.value);
+
+        console.log(sub1.getValue());
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

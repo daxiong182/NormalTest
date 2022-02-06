@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串出现的次数</title>
+</head>
+
+<body>
+
+
+    <script>
+        let str = 'hello';
+
+        const find = string => {
+
+            return [...str].reduce((accu, item) => {
+                if (!accu[item]) {
+                    accu[item] = 1
+                } else {
+                    accu[item]++
+                }
+                return accu
+            }, {})
+
+        }
+
+        const arr = find(str);
+
+        const [
+            [char, num]
+        ] = Object.entries(arr).sort(([, v1], [, v2]) => v2 - v1).slice(0, 1)
+
+        console.log(char, num);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

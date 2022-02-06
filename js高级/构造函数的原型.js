@@ -11,3 +11,21 @@ Person.prototype.say = function() {
 var p1 = new Person('张三');
 
 p1.say()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

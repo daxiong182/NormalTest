@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拆分url</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let url = 'http://www.domain.com/?user=rose&id=123&id=456&city=%E5%8C%97%E4%BA%AC&enabled';
+
+        function parseParam(url) {
+            let arr = url.split('?');
+
+            let str = arr[1];
+
+            let arr2 = str.split('&');
+            console.log(arr2);
+
+            let result = arr2.reduce((accu, item) => {
+                if (item.includes('=')) {
+                    let [key, value] = item.split('=')
+                    value = decodeURIComponent(value)
+                    value = /^\d+$/.test(value) ? +value : value
+                    if (accu[key]) {
+                        accu[key] = [].concat(accu[key], value)
+                    } else {
+                        accu[key] = value
+                    }
+                } else {
+                    accu[item] = true
+                }
+                return accu
+
+            }, {})
+
+            console.log(result);
+
+        }
+
+        parseParam(url);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

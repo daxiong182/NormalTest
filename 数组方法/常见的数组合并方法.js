@@ -10,3 +10,7 @@ let arr2 = [4, 5, 6]
 
 arr1.push.apply(arr1, arr2);
 console.log(arr1);
+
+let arr = new Array();
+
+console.log(arr);

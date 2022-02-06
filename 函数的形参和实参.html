@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>函数的形参和实参</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的形参和实参</title>
 </head>
+
 <body>
-  
 
 
 
 
 
 
-  
+    <script>
+        const result = [
+            ['iphone4', 1999],
+            ['mac', 19999],
+            ['iMc', 9999],
+            ['iphone13', 12999],
+        ]
+
+        //利用new Map 方法根据商品名字获取其价格
+        const findPrice = (data, name) => {
+            return new Map(data).get(name);
+        }
+
+        console.log(findPrice(result, 'mac'));
+
+
+        
+    </script>
+
 
 
 
@@ -33,25 +52,5 @@
 
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

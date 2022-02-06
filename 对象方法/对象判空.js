@@ -25,4 +25,6 @@ arr instanceof Array && arr.length === 0
 str === '' || str.trim().length === 0
 
 //4.数字判0或者NaN
-    68n ;;;!(Number(number) && number) === true
+(Number(number) && number) === true
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异步变同步</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <script>
+        let q1 = (fn) => {
+            setTimeout(() => {
+                fn(1)
+            }, Math.random() * 2000)
+        }
+        let q2 = (fn) => {
+            setTimeout(() => {
+                fn(2)
+            }, Math.random() * 1000)
+        }
+        let q3 = (fn) => {
+            setTimeout(() => {
+                fn(3)
+            }, Math.random() * 1000)
+        }
+
+
+        let run = async(q) => {
+            //补充实现逻辑代码
+            for (let i = 0; i < q.length; i++) {
+
+                const x = await new Promise((resolve) => {
+                    q[i](resolve)
+                })
+
+                console.log(x);
+            }
+
+
+        }
+
+        run([q1, q2, q3])
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

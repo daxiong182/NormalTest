@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        function add(x = 100, y = 100, ...args) {
+            let total = 0
+            for (let i = 0; i < arguments.length; i++) {
+                total += arguments[i]
+            }
+            console.log(args)
+            return total
+        }
+
+        console.log(add(1, 2, 3, 4));
+
+        //箭头函数 只能在后面使用 没有提升 没有自己的this 不能通过new关键字调用
+        fn = () => {
+
+        }
+
+        const sayHi = () => 'hi ~大熊啊·'
+
+        
+        
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

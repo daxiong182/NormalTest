@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // const p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve()
+        //     }, 1000)
+        // })
+
+        // console.log(p1);
+
+
+        const p1 = new Promise((res, rej) => {
+
+        })
+
+        p1.then(() => {
+            console.log('p1 then');
+        }).catch(() => {
+            console.log('p1 catch');
+        })
+
+
+        const p2 = new Promise((res, rej) => {
+            res(3)
+        })
+
+        //如果then方法不报错 将会返回一个resolve状态的Promise 否则返回一个reject状态的promise
+        p2.then((d) => {
+            console.log('p2 then ' + d);
+            return d + 10;
+        }).then(s => {
+            console.log(s);
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

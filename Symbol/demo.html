@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        //Symbol是一种新增的数据类型　表示一种独一无二的属性　通过Symbol()函数得到
+
+        //Symbol函数可以接收一个字符串作为参数
+        const sym1 = Symbol('name')
+        const sym2 = Symbol('name')
+
+        console.log(sym1 === sym2);
+
+
+        //Symbol.for()　可以用来得到相同的Symbol值
+        const sym3 = Symbol.for('name');
+        const sym4 = Symbol.for('name');
+
+        console.log(sym3 === sym4);
+
+        const key1 = Symbol('tiger')
+        const key2 = Symbol('flag')
+        const o = {
+            a: 1,
+            b: 2,
+            [key1]: 2022,
+            [key2]: '暴富'
+        }
+
+        Object.getOwnPropertySymbols(o).forEach(key => {
+            console.log(key, o[key]);
+        })
+
+        
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最多的标签</title>
+</head>
+
+<body>
+
+
+    <form action=""></form>
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+
+
+
+    <script>
+        const getTop3 = () => {
+
+            const nodeList = document.querySelectorAll('*');
+
+            const map = Array.from(nodeList).reduce((accu, {
+                nodeName
+            }) => {
+
+                accu[nodeName] = ++accu[nodeName] || 1
+
+                return accu
+
+            }, {})
+
+            return Object.entries(map).sort(([, v1], [, v2]) => v2 - v1).slice(0, 3)
+        }
+
+        console.log(getTop3());
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

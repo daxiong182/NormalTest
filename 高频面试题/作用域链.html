@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // console.log(Object.prototype.__proto__);
+
+        var a = {
+            n: 1
+        };
+
+        var b = a;
+
+        a.x = a = {
+            n: 2
+        };
+
+        //js中的连续赋值
+        //  a.x={n:2}    
+        //  a={n:2}
+
+        console.log(a.x);
+
+        console.log(b.x);
+
+        // var d = {
+        //     x: 2
+        // };
+
+        // c = d.x = 3;
+
+        // console.log(c);
+        // console.log(d);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

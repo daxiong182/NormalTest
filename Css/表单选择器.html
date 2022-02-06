@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单选择器</title>
+    <style>
+        /* input:disabled {
+            background: red;
+        }
+        
+        input:enabled {
+            background: greenyellow;
+        }*/
+        
+        input:checked+label {
+            color: greenyellow;
+        }
+        
+        input:required {
+            border: 1px solid red;
+        }
+        
+        input:optional {
+            border: 1px solid greenyellow;
+        }
+        
+        input:valid {
+            background: yellowgreen;
+        }
+        
+        input:invalid {
+            background: tan;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <form action="">
+
+        <p>
+            <input type="text" disabled>
+        </p>
+
+        <p>
+            <input type="text">
+        </p>
+        <input type="radio" name='sex' id='boy'>
+        <label for="boy">男</label>
+        <input type="radio" name='sex' id='girl'>
+        <label for="girl">女</label>
+        <p>
+            <input type="text" required>
+        </p>
+        <p>
+            <input type="email">
+        </p>
+        <p>
+            <button>保存</button>
+        </p>
+
+
+    </form>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

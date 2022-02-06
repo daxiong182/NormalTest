@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+</head>
+
+<body>
+
+
+    <!-- 1.实现左右布局 左侧固定150px 右侧自适应 两侧同高 -->
+
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+
+    <!-- 2.字符串倒置 -->
+    <script>
+        let str = 'abcefg';
+        let strs = str.split('').reverse().join('');
+        console.log(strs);
+    </script>
+
+
+    <!-- 3.找出两个数组中相同的数字 -->
+    <script>
+        let arr1 = [1, 2, 3];
+        let arr2 = [5, 9, 2];
+        let str3 = ''
+
+        function findSame() {
+
+            index = 0;
+
+
+            for (item of arr1) {
+                if (arr2.includes(item)) {
+                    str3 += item;
+                }
+            }
+            return str3
+
+        }
+
+        findSame();
+    </script>
+
+    <!-- 实现一个方法将对象扁平化 -->
+
+
+
+</body>
+
+</html>
